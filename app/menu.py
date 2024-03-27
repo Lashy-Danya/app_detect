@@ -22,7 +22,9 @@ class MenuBar(QMenuBar):
 
     def openFile(self):
         options = QFileDialog.Options()
-        imgPath, _ = QFileDialog.getOpenFileName(self.parent, "Open Image", "", "Image Files (*.png *.jpg *.jpeg *.JPG)", options=options)
+        imgPath, _ = QFileDialog.getOpenFileName(self.parent, "Open Image", "",
+                                                 "Image Files (*.png *.jpg *.jpeg *.JPG)",
+                                                 options=options)
         if imgPath:
             self.parent._loadImage(imgPath)
 
