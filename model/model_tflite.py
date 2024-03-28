@@ -88,7 +88,6 @@ class TFLiteModel:
 
         return detections
 
-
     def __run_inference_for_image_part_pcnt(self, image, cutoff, class_name, p_ax0=0, p_ay0=0, p_ax1=1, p_ay1=1):
         h, w, _ = image.shape
         max_x, max_y = w - 1, h - 1
@@ -127,7 +126,7 @@ class TFLiteModel:
 
         if not detections:
             print("No detections found meeting the cutoff threshold.")
-            return image
+            return (image, [])
 
         boxes = [[xmin, ymin, xmax, ymax, score]
                  for score, object_name, xmin, ymin, xmax, ymax in detections]

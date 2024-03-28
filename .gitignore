@@ -18,6 +18,12 @@ ENV/
 env.bak/
 venv.bak/
 
+# Ignore settings file if it contains sensitive data
 settings.json
 
+# Ignore output files from detection
+detection_counts.json
+detection_counts.txt
+
+# Pytest cache directory
 .pytest_cache

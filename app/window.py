@@ -8,7 +8,7 @@ from collections import Counter
 
 from .menu import MenuBar
 from .settings_window import SettingsWindow
-from .settings_manager import SettingsManager
+from utils.settings_manager import SettingsManager
 from .start_up_window import StartUpWindow
 from .inference_thread import DetectionThread
 
@@ -19,6 +19,20 @@ class MainWindow(QMainWindow):
         self.detection_thread = None
         self.imgPath = None
 
+        self.start_up_window = None
+        self.settings_window = None
+
+        # Define custome default settings
+        default_settings = {
+            "show_dialog_on_start": True,
+            "cutoff": 0.5,
+            "class_names_file": "",
+            "model_file": ""
+        }
+
+        # Update the DEFAULT_SETTINGS attribute of SettingsManager before creating an instance
+        SettingsManager.DEFAULT_SETTINGS = default_settings
+
         self.settings = SettingsManager()
 
         self.setWindowTitle("Test")
@@ -27,9 +41,6 @@ class MainWindow(QMainWindow):
         # Set Menu Bar
         self.menu_bar = MenuBar(self)
         self.setMenuBar(self.menu_bar)
-
-        # Set Settings Window
-        self.settings_window = SettingsWindow(self.settings)
 
         self.__initUI()
 
@@ -62,38 +73,42 @@ class MainWindow(QMainWindow):
         self.image_label.setText("")
 
     def _showSettings(self):
+        if not self.settings_window:
+            self.settings_window = SettingsWindow(self.settings)
         self.settings_window.show()
-        self.settings_window.raise_()
-        self.settings_window.activateWindow()
+        # self.settings_window.raise_()
+        # self.settings_window.activateWindow()
 
     def _checkShowStartUpWindow(self):
         if self.settings.get_setting("show_dialog_on_start"):
-            self.pop_up_window = StartUpWindow(self.settings)
-            self.pop_up_window.show()
+            self.start_up_window = StartUpWindow(self.settings)
+            self.start_up_window.show()
 
     def start_detection(self):
         if self.imgPath is None:
             QMessageBox.warning(self, "Warning", "No image has been loaded.")
             return
+        
+        cutoff = self.settings.get_setting("cutoff")
+        model_path = self.settings.get_setting("model_file")
+        class_name_path = self.settings.get_setting("class_names_file")
 
-        class_names = {
-            0: 'Marlboro',
-            1: 'Kent',
-            2: 'Camel',
-            3: 'Parliament',
-            4: 'Pall Mall',
-            5: 'Monte Carlo',
-            6: 'Winston',
-            7: 'Lucky Strike',
-            8: '2001',
-            9: 'Lark' 
-        }
+        if model_path == "":
+            QMessageBox.warning(self, "Warning", "The model was not selected.")
+            return
+        if class_name_path == "":
+            QMessageBox.warning(self, "Warning", "The class names file was not selected.")
+            return
+
+        with open(class_name_path, 'r') as file:
+            class_names = json.load(file)
+            class_names = {int(k): v for k, v in class_names.items()}
         # Disable the main window or its components
         self.setEnabled(False)
         QMessageBox.information(self, "Processing", "Detection is running, please wait...")
 
         # Start the thread for detection
-        self.detection_thread = DetectionThread(self.imgPath, cutoff=0.5, class_name=class_names)
+        self.detection_thread = DetectionThread(model_path, self.imgPath, cutoff, class_names)
         self.detection_thread.finished_signal.connect(self.on_detection_finished)
         self.detection_thread.error_signal.connect(self.on_detection_error)
         self.detection_thread.start()
@@ -102,6 +117,10 @@ class MainWindow(QMainWindow):
         image, detections = result
         # Re-enable the main window or its components
         self.setEnabled(True)
+
+        if not detections:
+            QMessageBox.information(self, "No Detections", "No objects were detected.")
+            return
 
         self.process_detections(detections)
 
@@ -132,3 +151,10 @@ class MainWindow(QMainWindow):
             json.dump(class_counts, file, indent=4)
 
         QMessageBox.information(self, "Detection Complete", "The detection counts have been written to detection_counts.txt and detection_counts.json.")
+
+    def closeEvent(self, event):
+        if self.start_up_window:
+            self.start_up_window.close()
+        if self.settings_window:
+            self.settings_window.close()
+        super().closeEvent(event)
