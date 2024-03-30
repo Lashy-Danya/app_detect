@@ -27,3 +27,5 @@ detection_counts.txt
 
 # Pytest cache directory
 .pytest_cache
+
+.idea

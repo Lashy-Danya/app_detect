@@ -1,0 +1,25 @@
+<mxGraphModel dx="0" dy="0" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" background="none" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    <mxCell id="node1" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;model.model_tflite.TFLiteModel&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; input_details: &lt;br/&gt; output_details: &lt;br/&gt; interpreter: &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; __init__(self, model_path): &lt;br/&gt; __run_inference_for_single_image(self, image): &lt;br/&gt; __run_inference_for_image_part(self, image, cutoff, class_name, ax0, ay0, ax1, ay1): &lt;br/&gt; __run_inference_for_image_part_pcnt(self, image, cutoff, class_name, p_ax0=0, p_ay0=0, p_ax1=1, p_ay1=1): &lt;br/&gt; __display_image_with_boxes(self, image, detections, p_x0=0, p_y0=0, p_x1=0, p_y1=0): &lt;br/&gt; do_sliding_window_inference(self, path_file, cutoff, class_name): &lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="-136" y="811" width="417" height="256" as="geometry" />
+    </mxCell>
+    <mxCell id="node0" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;object&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; __doc__: &lt;br/&gt; __dict__: &lt;br/&gt; __module__: &lt;br/&gt; __annotations__: &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; __class__(self): &lt;br/&gt; __class__(self, __type: type[object]): &lt;br/&gt; __init__(self): &lt;br/&gt; __new__(cls): &lt;br/&gt; __setattr__(self, __name: str, __value: Any): &lt;br/&gt; __delattr__(self, __name: str): &lt;br/&gt; __eq__(self, __value: object): &lt;br/&gt; __ne__(self, __value: object): &lt;br/&gt; __str__(self): &lt;br/&gt; __repr__(self): &lt;br/&gt; __hash__(self): &lt;br/&gt; __format__(self, __format_spec: str): &lt;br/&gt; __getattribute__(self, __name: str): &lt;br/&gt; __sizeof__(self): &lt;br/&gt; __reduce__(self): &lt;br/&gt; __reduce_ex__(self, __protocol: SupportsIndex): &lt;br/&gt; __reduce_ex__(self, __protocol: int): &lt;br/&gt; __getstate__(self): &lt;br/&gt; __dir__(self): &lt;br/&gt; __init_subclass__(cls): &lt;br/&gt; __subclasshook__(cls, __subclass: type): &lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="-92" y="110" width="329" height="640" as="geometry" />
+    </mxCell>
+    <mxCell id="node2" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;typing.Hashable&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; __hash__(self): &lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="-8" y="-14" width="161" height="68" as="geometry" />
+    </mxCell>
+    <mxCell id="edge1" edge="1" value="" parent="1" source="node1" target="node0" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=block;startSize=12;endArrow=none;strokeColor=#595959;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge0" edge="1" value="" parent="1" source="node0" target="node2" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=1;startArrow=block;startSize=12;endArrow=none;strokeColor=#595959;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points" />
+      </mxGeometry>
+    </mxCell>
+  </root>
+</mxGraphModel>

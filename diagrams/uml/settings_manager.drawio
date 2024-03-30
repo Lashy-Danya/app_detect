@@ -1,0 +1,25 @@
+<mxGraphModel dx="0" dy="0" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" background="none" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    <mxCell id="node1" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;object&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; __doc__: &lt;br/&gt; __dict__: &lt;br/&gt; __module__: &lt;br/&gt; __annotations__: &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; __class__(self): &lt;br/&gt; __class__(self, __type: type[object]): &lt;br/&gt; __init__(self): &lt;br/&gt; __new__(cls): &lt;br/&gt; __setattr__(self, __name: str, __value: Any): &lt;br/&gt; __delattr__(self, __name: str): &lt;br/&gt; __eq__(self, __value: object): &lt;br/&gt; __ne__(self, __value: object): &lt;br/&gt; __str__(self): &lt;br/&gt; __repr__(self): &lt;br/&gt; __hash__(self): &lt;br/&gt; __format__(self, __format_spec: str): &lt;br/&gt; __getattribute__(self, __name: str): &lt;br/&gt; __sizeof__(self): &lt;br/&gt; __reduce__(self): &lt;br/&gt; __reduce_ex__(self, __protocol: SupportsIndex): &lt;br/&gt; __reduce_ex__(self, __protocol: int): &lt;br/&gt; __getstate__(self): &lt;br/&gt; __dir__(self): &lt;br/&gt; __init_subclass__(cls): &lt;br/&gt; __subclasshook__(cls, __subclass: type): &lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="279" y="110" width="329" height="640" as="geometry" />
+    </mxCell>
+    <mxCell id="node2" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;typing.Hashable&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; __hash__(self): &lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="342" y="-13" width="161" height="68" as="geometry" />
+    </mxCell>
+    <mxCell id="node0" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;utils.settings_manager.SettingsManager&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; settings: &lt;br/&gt; filename: &lt;br/&gt; DEFAULT_SETTINGS: &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; __init__(self, filename: Union[str, Path] = &amp;quot;settings.json&amp;quot;): &lt;br/&gt; load_settings(self): &lt;br/&gt; save_settings(self): &lt;br/&gt; get_setting(self, key: str): &lt;br/&gt; set_setting(self, key: str, value: Any): &lt;br/&gt; update_settings(self, new_settings: Dict[str, Any]): &lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="-170" y="227" width="389" height="256" as="geometry" />
+    </mxCell>
+    <mxCell id="edge0" edge="1" value="" parent="1" source="node1" target="node2" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=1;startArrow=block;startSize=12;endArrow=none;strokeColor=#595959;exitX=0.434;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge1" edge="1" value="" parent="1" source="node0" target="node1" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=block;startSize=12;endArrow=none;strokeColor=#595959;exitX=1.000;exitY=0.794;exitDx=0;exitDy=0;entryX=0.000;entryY=0.500;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points" />
+      </mxGeometry>
+    </mxCell>
+  </root>
+</mxGraphModel>
